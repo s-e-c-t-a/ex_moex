@@ -52,7 +52,8 @@ defmodule ExMoex.MixProject do
       {:ecto_psql_extras, "~> 0.6"},
       {:httpoison, "~> 1.8", override: true},
       {:jaxon, "~> 1.0"},
-      {:tables, git: "git@github.com:UA3MQJ/elx-tables.git"}
+      {:tables, git: "git@github.com:UA3MQJ/elx-tables.git"},
+      # {:ecto3_mnesia, "~> 0.2.0"},
     ]
   end
 

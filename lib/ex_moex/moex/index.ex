@@ -16,6 +16,12 @@ defmodule ExMoex.MOEX.Index do
     data
   end
 
+  def import do
+    data = ExMoex.MOEX.Index.get
+
+    ExMoex.MOEX.Engines.import(data["engines"])
+  end
+
   def create_tables(data) do
     data
       |> Map.keys()
