@@ -20,6 +20,13 @@ defmodule ExMoex.MOEX.Index do
     data = ExMoex.MOEX.Index.get
 
     ExMoex.MOEX.Engines.import(data["engines"])
+    ExMoex.MOEX.Markets.import(data["markets"])
+    ExMoex.MOEX.Boards.import(data["boards"])
+    ExMoex.MOEX.BoardGroups.import(data["boardgroups"])
+    ExMoex.MOEX.Durations.import(data["durations"])
+    ExMoex.MOEX.SecurityTypes.import(data["securitytypes"])
+    ExMoex.MOEX.SecurityGroups.import(data["securitygroups"])
+    ExMoex.MOEX.SecurityCollections.import(data["securitycollections"])
   end
 
   def create_tables(data) do

@@ -1,5 +1,5 @@
-defmodule ExMoex.MOEX.Engines do
-  alias ExMoex.MOEX.Engine
+defmodule ExMoex.MOEX.Durations do
+  alias ExMoex.MOEX.Duration
   alias ExMoex.Repo
 
   def import(data) do
@@ -7,7 +7,7 @@ defmodule ExMoex.MOEX.Engines do
     rows = data["data"]
     Enum.map(rows, fn(row) ->
       record = Enum.zip(columns, row) |> Enum.into(%{})
-      changeset = Engine.changeset(%Engine{}, record)
+      changeset = Duration.changeset(%Duration{}, record)
       Repo.insert!(changeset, on_conflict: :nothing)
     end)
   end
