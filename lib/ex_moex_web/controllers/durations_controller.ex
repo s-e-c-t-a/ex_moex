@@ -1,4 +1,4 @@
-defmodule ExMoexWeb.PageController do
+defmodule ExMoexWeb.DurationsController do
   use ExMoexWeb, :controller
 
   alias ExMoex.MOEX.Durations
@@ -6,6 +6,6 @@ defmodule ExMoexWeb.PageController do
   def index(conn, _params) do
     durations = Durations.list_durations()
 
-    render(conn, "index.html")
+    render(conn, "index.html", durations: durations)
   end
 end

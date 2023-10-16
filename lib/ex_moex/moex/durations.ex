@@ -1,6 +1,7 @@
 defmodule ExMoex.MOEX.Durations do
   alias ExMoex.MOEX.Duration
   alias ExMoex.Repo
+  import Ecto.Query
 
   def import(data) do
     columns = data["columns"]
@@ -10,5 +11,10 @@ defmodule ExMoex.MOEX.Durations do
       changeset = Duration.changeset(%Duration{}, record)
       Repo.insert!(changeset, on_conflict: :nothing)
     end)
+  end
+
+  def list_durations() do
+    query = Duration |> order_by(asc: :interval)
+    Repo.all(query)
   end
 end
